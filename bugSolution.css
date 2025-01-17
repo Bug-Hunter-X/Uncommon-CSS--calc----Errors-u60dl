@@ -1,0 +1,29 @@
+/* Correct usage of calc() */
+
+.example {
+  width: calc(100% - 20px); /* Correct: Space between operator and value */
+  height: calc(200px + 50px); /* Correct: Consistent units */
+  margin: calc((100vw - 800px) / 2); /* Correct nested calculation and units*/
+}
+
+.another-example {
+  padding: calc(10px + 2em); /* Correct: Mixing units is fine */
+}
+
+/* Handling potential division by zero (safeguard): */
+.safe-division {
+  width: calc(min(100%, 1000px / var(--divisor, 1))); /* Use 1 as default to prevent division by zero */
+}
+
+/* Browser compatibility fallback */
+.browser-compat {
+  width: calc(100% - 50px);
+  width: 950px; /* fallback for browsers that don't support calc() */
+}
+
+/* Avoid mixing different value types directly */
+.avoid-mixing {
+  /* Incorrect: Mixing strings and numbers is not possible directly */
+  /* width: calc('100px' + 50); */
+  width: calc(100px + 50px); /* Correct:Consistent units */
+}
