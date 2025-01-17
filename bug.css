@@ -1,0 +1,19 @@
+The CSS property `calc()` is used to perform calculations on values. However, there are some uncommon errors that can occur:
+
+1. **Missing spaces:** Spaces are required between the operators and values in `calc()` expressions. For example, `width:calc(100%-10px);` is incorrect and will not work. The correct syntax is `width: calc(100% - 10px);`
+
+2. **Incorrect units:** Units must be consistent across the entire expression. For example, `height:calc(20px + 5em);` is valid, but `height:calc(20px + 5);` is not, because one term is in pixels and the other is unitless.  
+
+3. **Nested functions:** While you can nest functions, it can lead to unexpected results or errors if not done correctly. Ensure correct parentheses matching and unit consistency within nested functions.
+
+4. **Division by zero:**  Avoid dividing by zero in `calc()` expressions. This will result in an error or unexpected behavior.
+
+5. **Browser compatibility:** Some older browsers may not support more complex `calc()` expressions. Test your code thoroughly across various browsers and consider using CSS fallbacks if needed.
+
+6. **Unclosed parentheses:** Forgetting to close parentheses results in invalid expressions.  Carefully count and ensure each opening parentheses has a corresponding closing one.
+
+7. **Using invalid values:**  Make sure the values you're using within `calc()` are valid CSS values (numbers, percentages, lengths, etc.). Invalid values will cause the expression to fail.
+
+8. **Incorrect operator usage:** The operators used in calc() expressions (+, -, *, /) must be used correctly. 
+
+9. **Mixing different value types:**While numbers with units are allowed, directly mixing values of different types (such as strings and numbers) will lead to an error.
